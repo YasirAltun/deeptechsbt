@@ -1,38 +1,111 @@
+/* App.css */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden; /* Yatay kaydırmayı engelle */
+  background-image: url('https://source.unsplash.com/random'); /* Arka plan görseli */
+  background-size: cover;
+  background-attachment: fixed; /* Sabit arka plan */
+  background-position: center;
+}
+
 .App {
-  text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: transparent;
+  z-index: 1000;
+  padding: 10px 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.content {
+  padding-top: 60px; /* Sabit başlığın altında boşluk bırak */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.services, .projects, .about-us {
+  height: 50vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.services {
+  background-color:transparent; /* Bölümlere şeffaf arka plan ekleyin */
 }
 
-@keyframes App-logo-spin {
+.projects {
+  background-color: transparent;
+}
+.footer {
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+}
+
+@keyframes slideInLeft {
   from {
-    transform: rotate(0deg);
+    transform: translateX(-100%);
+    opacity: 0;
   }
   to {
-    transform: rotate(360deg);
+    transform: translateX(0);
+    opacity: 1;
   }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.slide-in-left {
+  animation: slideInLeft 1s ease forwards;
+}
+
+.slide-in-right {
+  animation: slideInRight 1s ease forwards;
+}
+
+.slide-out-left {
+  animation: slideOutLeft 1s ease forwards;
+}
+
+.slide-out-right {
+  animation: slideOutRight 1s ease forwards;
 }

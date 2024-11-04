@@ -1,0 +1,52 @@
+/* Logo kısmı değişmiyor */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #eaeaea;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+.nav {
+    display: flex;
+    gap: 20px;
+    position: relative;
+    justify-content: flex-start; /* Menü öğelerini sola hizalama */
+    margin-left: 20px; /* Tüm menüyü sola kaydırmak için */
+    padding-right: 30px; /* Scroll bar ile mesafe bırakır */
+}
+
+
+.nav-item {
+    position: relative;
+    text-align: center;
+    color: #333;
+    text-decoration: none;
+}
+
+.nav-item img {
+    transition: transform 0.3s ease; /* Hover durumunda hareket efekti */
+    width: 50px; /* İhtiyaca göre boyutlandır */
+    height: 50px;
+}
+
+.nav-item:hover img {
+    transform: translateY(-10px); /* Hover durumunda yukarı kaydır */
+}
+
+.nav-text {
+    display: block;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.nav-item:hover .nav-text {
+    opacity: 1; /* Hover durumunda görünür yap */
+}
