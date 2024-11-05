@@ -3,11 +3,10 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  overflow-x: hidden; /* Yatay kaydırmayı engelle */
-  background-image: url('https://source.unsplash.com/random'); /* Arka plan görseli */
+  background: linear-gradient(320deg, rgb(231,79,42), rgb(0,0,0));
+  background-attachment: fixed; /* Arka planı sabitler */
   background-size: cover;
-  background-attachment: fixed; /* Sabit arka plan */
-  background-position: center;
+  color: #ffffff; /* Metin rengini kontrast için beyaz yap */
 }
 
 .App {
@@ -28,8 +27,15 @@ body {
   padding-top: 60px; /* Sabit başlığın altında boşluk bırak */
 }
 
-.services, .projects, .about-us {
-  height: 50vh;
+.services, .projects{
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-us {
+  height: 25vh;
   display: flex;
   align-items: center;
   justify-content: center;

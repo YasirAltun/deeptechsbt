@@ -1,42 +1,37 @@
-import React, { useState } from 'react';
-import { Element } from 'react-scroll';
-import './Footer.css'; // Footer bileşenine ait CSS dosyasını import ediyoruz
-
-
-
-
+import React from 'react';
+import './Footer.css';
 
 const Footer = () => {
-  const [isVisible, setIsVisible] = useState(false);
-
-  const handleScroll = () => {
-    const aboutUsSection = document.getElementById('footer');
-    const topPosition = aboutUsSection.getBoundingClientRect().top;
-    /* if (topPosition < window.innerHeight * 0.75 && topPosition > 0) */
-    if (topPosition < window.innerHeight * 0.75) {
-      setIsVisible(true);
-    } else {
-      setIsVisible(false);
-    }
-  };
-
-  
-  React.useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
-    <Element name="footer">
-      <section
-        id="footer"
-        className={`footer ${isVisible ? 'slide-in-left' : 'slide-out-right'}`}
-      >
-        <h2>Footer</h2>
-        <p>.</p>
-        <p>T</p>
-      </section>
-    </Element>
+    <footer className="footer">
+      <div className="footer-column">
+        <h3>Ürünler</h3>
+        <p>Diyaloğa Dayalı Yapay Zeka</p>
+        <p>Konuşma Tanıma</p>
+        <p>Yüz Tanıma Sistemi</p>
+      </div>
+      <div className="footer-column">
+        <h3>Hizmetler</h3>
+        <p>Uygulama Geliştirme</p>
+        <p>Danışmanlık</p>
+        <p>Siber Güvenlik</p>
+      </div>
+      <div className="footer-column">
+        <h3>Ar-Ge Merkezi</h3>
+        <p>Kariyer</p>
+        <p>İletişim</p>
+      </div>
+      <div className="footer-column">
+        <h3>İletişim</h3>
+        <p>Adres: ASO Teknopark, Ahi Evran OSB Mah., Erkunt Cad., No: 3/52, 06935, Sincan, Ankara - TÜRKİYE</p>
+        <p>Telefon: +90 312 911 00 02 (pbx)</p>
+        <p>Faks: +90 312 911 00 03</p>
+        <p>E-Posta: info@deeptechsbt.com</p>
+      </div>
+      <div className="footer-bottom">
+        <p>© 2024 Tüm Hakları DEEPTECH Universe Savunma ve Bilişim Teknolojileri A.Ş.'ye Aittir. Bilgi Güvenliği Politikamız | Kalite Politikamız</p>
+      </div>
+    </footer>
   );
 };
 

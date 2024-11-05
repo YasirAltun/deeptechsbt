@@ -1,4 +1,11 @@
 /* Logo kısmı değişmiyor */
+.logo img {
+    width: 250px; /* İhtiyaca göre ayarla */
+    height: auto; /* Oranları korumak için otomatik yükseklik */
+    max-width: 100%; /* Taşmayı engellemek için maksimum genişlik */
+  }
+  
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -10,6 +17,7 @@
     width: 100%;
     top: 0;
     z-index: 1000;
+    background-color: black;
 }
 .nav {
     display: flex;
@@ -20,23 +28,23 @@
     padding-right: 30px; /* Scroll bar ile mesafe bırakır */
 }
 
-
 .nav-item {
     position: relative;
-    text-align: center;
-    color: #333;
+    color: #ffffff;
     text-decoration: none;
-}
+    transition: color 0.3s ease;
+    display: inline-block;
+    padding: 10px; /* Dairenin düzgün görünmesi için içerik etrafına boşluk */
+  }
+  
+  
+  .nav-item img {
+    transition: transform 0.3s ease;
+  }
 
-.nav-item img {
-    transition: transform 0.3s ease; /* Hover durumunda hareket efekti */
-    width: 50px; /* İhtiyaca göre boyutlandır */
-    height: 50px;
-}
-
-.nav-item:hover img {
+  .nav-item:hover img {
     transform: translateY(-10px); /* Hover durumunda yukarı kaydır */
-}
+  }
 
 .nav-text {
     display: block;
@@ -49,4 +57,26 @@
 
 .nav-item:hover .nav-text {
     opacity: 1; /* Hover durumunda görünür yap */
+
 }
+.nav-item::before {
+    content: '';
+    position: absolute;
+    top: 30%; /* Dairenin başlangıç noktasını daha yukarı taşı */
+    left: 45%;
+    width: 0;
+    height: 0;
+    background-color: #ffffff;
+    border-radius: 50%;
+    transform: translate(-50%, -50%); /* Dairenin tam ortada konumlanmasını sağlar */
+    transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+    z-index: -1;
+  }
+  
+  
+  .nav-item:hover::before {
+    width: 80%; /* Hover durumunda tam boyutuna ulaşır */
+    height: 80%; /* Hover durumunda tam boyutuna ulaşır */
+    opacity: 1; /* Görünür hale gelir */
+  }
